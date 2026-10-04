@@ -1,0 +1,21 @@
+services:
+  jupyter:
+    build: .
+    network_mode: host
+    user: "${NB_UID}:100"
+    volumes:
+      - .:/home/jovyan/work
+      - ./data:/home/jovyan/data
+    depends_on:
+      - neo4j
+
+  neo4j:
+    image: neo4j:5
+    network_mode: host
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:
