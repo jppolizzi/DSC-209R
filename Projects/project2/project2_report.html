@@ -138,10 +138,37 @@
                     }
                 }
             }
+            nav {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                display: flex;
+                gap: 0.5rem;
+                z-index: 100;
+            }
+
+            nav a {
+                display: inline-block;
+                padding: 0.4em 0.8em;
+                background: var(--color-neutral-40);
+                color: white;
+                text-decoration: none;
+                border-radius: 0.4rem;
+                font-size: 85%;
+                font-weight: 600;
+            }
+
+            nav a:hover {
+                background: var(--color-neutral-20);
+            }
         </style>
     </head>
 
     <body>
+        <nav>
+            <a href="https://github.com/jppolizzi" target="_blank">GitHub</a>
+            <a href="https://jppolizzi.github.io/portfolio/projects/" target="_blank">Projects</a>
+        </nav>
         <header>
             <h1>
                 <small>Project 2</small>
@@ -153,14 +180,14 @@
 
         <main>
             <p><string> Proposition:</strong></p>
-            <h2>Glasgow Leaders Declaration to stop and reverse deforestation by 2030 is falling short.</h2>
+            <h2>New York Declaration on Forests to stop and reverse deforestation by 2030 is falling short.</h2>
 
             <section>
                 <h3>FOR the Proposition</h3>
 
                 <figure>
                     <iframe src="forest_loss_map.html" width="955" height="760" style="border:none; display:block; margin:0 auto;"></iframe>
-                    <figcaption>The Glasgow Leader Declaration set out to stop and reverse deforestion by 2030. As of the most current full data, from 1992 to 2022 you can see that at best we are in stable range, and still losing ground.</figcaption>
+                    <figcaption>The New York Declaration on Forests set out in 2014 UN Climate Summit to stop and reverse deforestion by 2030. As of the most current full data, from 1992 to 2022 you can see that at best we are in stable range, and still losing ground.</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
@@ -168,7 +195,7 @@
                 <ul>
                     <li>(1.5) The title, Rooted in Reality: Resotration Efforts Are Outpaced by Forest Loss, uses word play to draw the reader to the fact that we are discussing trees/forestation and that we are going to ground them with reality. Its a fun word play that should be memorable to the viewer and frames the proposition. The subtitle further identifies the overall point of the visualization. I score this as 1.5 because I think it is a little dramatic. After all the data shows that we are stable, though losing ground.</li>
                     <li>(2) I divide the data by the max bins that are recommended from the lecture, 7. The data progressivly increases -5 to 5 is considered stable, 5 to 20 is slight gain, 20-50 is a gain and anything larger than 50% increase is a Large gain, similarly for going into losses (-20 to 5 is slight liss, -50 to -20 is Loss, and anything larger than -50 is a deep loss). Binning creates a very simple way to understand the data on the choropleth. The viewer should immediatly be able to identify the groupings without much assistance.</li>
-                    <li>(2) I decided to add the time series to the bottom and make this look like a dashboard. It felt like the choropleth alone didnt quite convey the story I was trying to tell so I blended the ideas I presented in the checkpoint. Now, with the inclusion of the time series showing the percent change over time the viewer can not only get an interactive view of each country in the choropleth, but also get a quick idea of the overall percent change that is being conveyed by the data.
+                    <li>(2) I decided to add the time series to the bottom and make this look like a dashboard. It felt like the choropleth alone didnt quite convey the story I was trying to tell so I blended the ideas I presented in the checkpoint. Now, with the inclusion of the time series showing the percent change over time the viewer can not only get an interactive view of each country in the choropleth, but also get a quick idea of the overall percent change that is being conveyed by the data.</li>
                     <li>(2) The colors on the map were chosen to be friendly to color blind individuals. The stable color is an off white color. Losses become more desert like, and gains use a color deficiency friendly green blend to show forest growth. The time series reflects the colors as well. You can see that our overall Global Time series shows a negative trend, but within stable. The callouts Also follow along with the overall color scheme chosen</li>
                     <li>(2) The call outs give a quick dashboard style view of calculations for loss, gans, the overall deficit, and how much is needed to hit the 2030 target. I wrap up the visualization with a nice summary along the bottom that provides context to the callouts. </li>
                     <li>(1) The overall background color is chosen as being blue, and slightly darger then the ocean color since we're the blue planet. I want to remind the viewer that this is a project based on global environmental goals.</li>
@@ -188,15 +215,50 @@
 
                 <ul>
                     <li>(-2) Starting with the title I applied a very positive (and deceptive) outlook on the proposition and shift the focus away from Mha lost, to how many countries are gaining forests. The title is again playful and should be memorable to the reader.</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
+                    <li>(-2) The binning used obscures the reality. I seperate the bins into 3 catagories, negating natural fulxuations that would be considered a stable environemnt and give hard up and down values to Gain (greater than 0), Stable (0), Losses (less than 0). This makes it appear as if there is a large amount of countries that are gaining forest cover when in fact they are just stabilizing. This is the most deceptive strategy deployed in this visualization.</li>
+                    <li>(-2) Intentionally, I looked up the worst possible color choices for the map. Its not at all user friendly for individuals who are color blind. Both the red and green colors chosen will distort to someone who is color blind. Furthermore, the grey color chosen for Stable is a known value that, depending on the type of colorblindness they have, may be indistinguishable from the red or green used in this visualization.</li>
+                    <li>(-2) By shifting to total amount of countries gained, we can plot the trend lines for gains versus losses and predict that by 2030 we could see a momentum shift where there are more countries gaining forest then losing forest. However, if you notice we add an astric to the 2030 value and provide some fine print that states that we would need to increase our current rate of gain by 1.83X in order to make the goal by 2030. This is deceptive in two ways. The first, is that we are fudging the number displayed to hit our 2030 marker, when convergence would really happen at 2032. The second is that total number of countries gaining isnt the primary goal of the New York Declaration on Forests.</li>
+                    <li>(-1) The background color was chosen to be green so it always draws the reader back to a positive association with nature.</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Final Reflection</h2>
 
-                <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+                <p> After exploring the IMF forest-area dataset, I became interested in how the information could be connected to a real-world environmental goal. During that process, I discovered the New York Declaration on Forests (2014), an international commitment aimed at stopping and reversing deforestation by 2030. This led to the proposition <br>
+                    that the declaration is falling short of its 2030 target. I was also interested in using maps and choropleths to visualize global patterns, and the dataset was well suited to both geographic and time series analysis. For spatial data, we are able to extract per country observations over the 30 year period, which allows <br>
+                    us to get both geographic, and temporal analysis of a particular country. <br> 
+                    
+                <p> To build each visualizatrion I transformed the raw dataset into several derived measurements. I calculated the percentage change in forest area between 1992 and 2022 for each country, converted the country names into ISO-3 country codes for map rendering, aggregated annual values to create global time series, developed <br>
+                    additional calculated fields such as forest deficit, restoration requirements through 2030, country level gain and loss counts, and applied binning techniques that were explored in the lecture. These transformations allowed the same dataset the be presented in multiple ways and tell conflicting stories. </p>
+
+                <p> The first visualization was designed to provide an honest interpretation of the data that details the current progress toward the 2030 goal. The focus is on how much forest has been lost and what it means in the global context. Countries were grouped into seven catagories ranging from Deep Loss (<=-50%) to Large Gain(>=50%). <br>
+                    The level of granularity with seven bins allows the user to distinguish between small changes and large ones, while still being able to contextualize the global view. </p>
+
+                <p> The choropleth is paired with a global time-series chart showing the total forest area over time. While the map allows viewers to regionally understand and interact with the changes of each individual country, the time series provides historical tracking and demonstrates that overall forest area (measure in megahectares) continues to <br> 
+                    decline. Additional dashboard metrics quantify total forest lost, total forest gained, the recovery deficit, and the annual restoration rate required to eliminate the deficit by 2030. Together these elements create a compelling argument that the current recovery effort is failing to offset the loss over a 30 year period. </p>
+
+                <p> Several design choices were made to reinforce the interpretation, further the stories narrative, and make an engaging interactive and visual experience. The title, "Rooted in Reality", uses wordplay to reference forests and create a memorable introduction while indicating that the visualization is intended to ground the descussion in <br> 
+                    measurable outcomes. The color scale uses a desert like tan and brown pallet to represent losses and a cooler green-blue blend to represent gains while leveraging an off white color for stability. The colors carry through to the call outs and the time series chart as well, hence the off-white time series trend line, which should convey <br> 
+                    to the reader that we are declining, but still stable over the past 30 years. The callouts and the summary focus attention on cumulative outcomes rather than individual country progress or loss. Both the choropleth and the time series are also interactive, as the user hovers over a country they will be presented with a popup box of the <br>
+                    percentage change for the country. The color palette was chosen not only for thematic reasons, but also to be accessible to individuals with color blindness. Although the title frames the visualization with a specific viewpoint, all calculations are derived from the dataset and represent an honest and transparent application of the data to a visualization. </p>
+
+                <p> The second visualization intentionally demonstrates how the same dataset can be presented to make an opposing argument. The title "Seeding the Future" is also using forest related wordplay but is intended to inspire an optimistic view of the data. While the underlying data remains unchanged, the choices and focus chosen for this visual <br>
+                    emphasises that a shift taking place. Instead of highlighting the amount of forest area gained or lost, the visualization focuses on the number of countries that are exhibiting growth as opposed to loss. This metric change misleads readers into evaluating progress based on participation, rather then ecological impact. </p>
+                
+                <p> To firther strengthen this narrative, I collapsed the original seven bins down into three groups: Loss, Stable, and Gain. The simplification completely masks extreme gains and losses by treating all countries within a category as equal. A country that lost a large percentage of forest cover appears visually similar to a country that had <br> 
+                    losses that would otherwise be considered within a stable buffer. The result is a map that overly optimistic, despite being derived from the same data.</p>
+
+                <p> The time series compnent also contributes to the positive framing. Instead of displaying changes in total forest area, it shows the number of countries gaining or losing forest relative to the 1992 baseline. A linear trend is then projected from each pattern towards the 2030 goal, and suggests that positive momentum is building. While the <br> 
+                    underlying calculations and statistical methods are ligitimate, iy=ts application in this context is misleading and shifts the goal away from closing the recovery deficit and towards an optimistic projection. Furthermore, the actual projection would show convergence taking place in 2032, not 2030, the reader would need to read the astrisk <br> 
+                    that says in order to hit this projection, a 1.83X increase would need to be applied. </p>
+                
+                <p> The bright red, and green colors were chosen to be harsh and visually riggid to provide the maximum contast between gainer and losers. The colors are also explicitly the hex values that would give some color blind individuals trouble. Grey was chosen for stable countries because it serves as a neutral color that can blend with both red and <br> 
+                    green for viewers with color vision deficiencies. The inaccessiblity is deliberate to highlight the fact that the chosen color scheme can impact the audience in ways other than interpretation. </p>
+                    
+                <p> The graph is designed to draw attention to broad categories rather than nuanced comparisons. This design choices show how visual encodings can influence interpretation by encouraging viewers to focus on the large number of green countries while making it more  <br>
+                    difficult to distinguish the severity of forest loss across red countries.  </p>
+
             </section>
         </main>
     </body>
