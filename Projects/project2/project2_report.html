@@ -148,26 +148,30 @@
                 Persuasive or Deceptive Visualization?
             </h1>
 
-            <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+            <p><strong>Joel Polizzi</strong> - <em>jppolizzi@ucsd.edu</em></p>
         </header>
 
         <main>
-            <h2>Proposition: [STATE PROPOSITION]</h2>
+            <p><string> Proposition:</strong></p>
+            <h2>Glasgow Leaders Declaration to stop and reverse deforestation by 2030 is falling short.</h2>
 
             <section>
                 <h3>FOR the Proposition</h3>
 
                 <figure>
-                    <iframe src="forest_loss_map.html" width="100%" height="600" style="border:none;"></iframe>
-                    <figcaption>BRIEF CAPTION HERE.</figcaption>
+                    <iframe src="forest_loss_map.html" width="955" height="760" style="border:none; display:block; margin:0 auto;"></iframe>
+                    <figcaption>The Glasgow Leader Declaration set out to stop and reverse deforestion by 2030. As of the most current full data, from 1992 to 2022 you can see that at best we are in stable range, and still losing ground.</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li>RATIONALE_1</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
+                    <li>(1.5) The title, Rooted in Reality: Resotration Efforts Are Outpaced by Forest Loss, uses word play to draw the reader to the fact that we are discussing trees/forestation and that we are going to ground them with reality. Its a fun word play that should be memorable to the viewer and frames the proposition. The subtitle further identifies the overall point of the visualization. I score this as 1.5 because I think it is a little dramatic. After all the data shows that we are stable, though losing ground.</li>
+                    <li>(2) I divide the data by the max bins that are recommended from the lecture, 7. The data progressivly increases -5 to 5 is considered stable, 5 to 20 is slight gain, 20-50 is a gain and anything larger than 50% increase is a Large gain, similarly for going into losses (-20 to 5 is slight liss, -50 to -20 is Loss, and anything larger than -50 is a deep loss). Binning creates a very simple way to understand the data on the choropleth. The viewer should immediatly be able to identify the groupings without much assistance.</li>
+                    <li>(2) I decided to add the time series to the bottom and make this look like a dashboard. It felt like the choropleth alone didnt quite convey the story I was trying to tell so I blended the ideas I presented in the checkpoint. Now, with the inclusion of the time series showing the percent change over time the viewer can not only get an interactive view of each country in the choropleth, but also get a quick idea of the overall percent change that is being conveyed by the data.
+                    <li>(2) The colors on the map were chosen to be friendly to color blind individuals. The stable color is an off white color. Losses become more desert like, and gains use a color deficiency friendly green blend to show forest growth. The time series reflects the colors as well. You can see that our overall Global Time series shows a negative trend, but within stable. The callouts Also follow along with the overall color scheme chosen</li>
+                    <li>(2) The call outs give a quick dashboard style view of calculations for loss, gans, the overall deficit, and how much is needed to hit the 2030 target. I wrap up the visualization with a nice summary along the bottom that provides context to the callouts. </li>
+                    <li>(1) The overall background color is chosen as being blue, and slightly darger then the ocean color since we're the blue planet. I want to remind the viewer that this is a project based on global environmental goals.</li>
                 </ul>
             </section>
 
@@ -175,14 +179,15 @@
                 <h3>AGAINST the Proposition</h3>
 
                 <figure>
-                    <img src="IMAGE_FILENAME" alt="" />
+                    <!--<img src="IMAGE_FILENAME" alt="" />-->
+                    <iframe src="forest_gain_map.html" width="955" height="780" style="border:none; display:block; margin:0 auto;"></iframe>
                     <figcaption>BRIEF CAPTION HERE.</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li>RATIONALE_1</li>
+                    <li>(-2) Starting with the title I applied a very positive (and deceptive) outlook on the proposition and shift the focus away from Mha lost, to how many countries are gaining forests. The title is again playful and should be memorable to the reader.</li>
                     <li>RATIONALE_2</li>
                     <li>RATIONALE_3</li>
                 </ul>
